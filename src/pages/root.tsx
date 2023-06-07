@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Box from "../components/Box";
+import ContactForm from "../components/ContactForm";
 import Grid from "../components/Grid";
 import Layout from "../components/Layout";
 import Project from "../components/Project";
@@ -45,17 +46,7 @@ const Root = () => {
       {projects?.map((project: ProjectType, index: number) => {
         return <Project key={index} project={project} />
       })}
-      <div id="contact" className="p-20 py-52 min-h-screen md:h-screen flex flex-col justify-center items-center bg-[#2F2F2F] text-[#DDDDDD]">
-        <div className="text-center md:w-1/3">
-          <h2 className="text-[2rem] md:text-[4rem] font-extralight">Contact me</h2>
-          <p className="font-extralight md:text-[1.5rem]">Tell me what the fuck is going on please.</p>
-          <form className="mt-10 flex flex-col gap-y-8 font-extralight">
-            <input className="md:text-[1.5rem] bg-transparent border-[1px] rounded-2xl py-2 px-4 w-full" placeholder="Your email" type="text" />
-            <textarea className="no-scrollbar md:text-[1.5rem] bg-transparent border-[1px] rounded-2xl py-2 px-4 w-full" placeholder="Message" />
-            <button className="md:text-[1.5rem] border-[1px] rounded-2xl py-2 px-4 w-full bg-[#EAEAEA] text-[#2E2E2E]">Send</button>
-          </form>
-        </div>
-      </div>
+      <ContactForm />
     </Layout>
   )
 }

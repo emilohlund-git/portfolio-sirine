@@ -6,10 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "email": "email dev",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@tailwindcss/line-clamp": "^0.4.4",
     "framer-motion": "^10.12.16",
     "pocketbase": "^0.15.1",
