@@ -1,4 +1,4 @@
-import React from "react";
+import { useLoaderData } from "react-router-dom";
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import FadeIn from "../components/FadeIn";
@@ -10,11 +10,9 @@ import Project from "../components/Project";
 import ProjectMedia from "../components/ProjectMedia";
 import Typography from "../components/Typography";
 
-type Props = {
-  project: ProjectType;
-}
+const ProjectPage = () => {
+  const project = useLoaderData() as ProjectType;
 
-const ProjectPage: React.FC<Props> = ({ project }) => {
   return (
     <Layout>
       <Project flat={true} project={project} />
