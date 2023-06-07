@@ -196,7 +196,7 @@ const ProjectPage = () => {
             <Typography type="h2">&gt; Brand guidelines</Typography>
           </FadeIn>
           <FadeIn>
-            <div className="flex flex-col gap-y-6">
+            <div className="flex flex-col gap-y-6 mt-12">
               <Typography type="h3">&gt; About</Typography>
               <div>
                 <Typography type="p" html={project.about} />
@@ -204,14 +204,16 @@ const ProjectPage = () => {
             </div>
           </FadeIn>
           <FadeIn>
-            <div className="flex flex-col gap-y-6">
+            <div className="flex flex-col gap-y-6 mt-12">
               <Typography type="h3">&gt; Logo</Typography>
-              <div>
+              <div className="grid col-auto grid-flow-col gap-8">
                 {project.expand.logo?.expand.media?.map((image) => {
                   return (
                     <ProjectMedia key={image.id} mediaType={image.type} media={image} />
                   )
                 })}
+              </div>
+              <div>
                 <p
                   className="text-[1.5rem] font-extralight">
                   {project.expand.logo?.content}
@@ -220,9 +222,9 @@ const ProjectPage = () => {
             </div>
           </FadeIn>
           <FadeIn>
-            <div className="flex flex-col gap-y-6">
+            <div className="flex flex-col gap-y-6 mt-12">
               <Typography type="h3">&gt; Brand colors</Typography>
-              <div>
+              <div className="flex gap-x-8">
                 {project.expand.brand_colors.expand.media?.map((image) => {
                   return (
                     <ProjectMedia key={image.id} mediaType={image.type} media={image} />
@@ -234,38 +236,40 @@ const ProjectPage = () => {
               </div>
             </div>
           </FadeIn>
-          <FadeIn>
-            <div className="flex flex-col gap-y-6">
-              <Typography type="h3">&gt; Iconography</Typography>
-              <div>
-                {project.expand.iconography.map((iconography) => {
-                  return <div key={iconography.id}>
-                    <p className="text-[1.5rem] font-extralight">
-                      {iconography.content}
-                    </p>
-                    {iconography.expand.media?.map((image) => {
-                      return (
-                        <ProjectMedia key={image.id} mediaType={image.type} media={image} />
-                      )
-                    })}
-                  </div>
-                })}
+          <div className="flex gap-x-20">
+            <FadeIn>
+              <div className="flex flex-col gap-y-6 mt-12">
+                <Typography type="h3">&gt; Iconography</Typography>
+                <div>
+                  {project.expand.iconography.map((iconography) => {
+                    return <div className="flex flex-col gap-y-12" key={iconography.id}>
+                      <Typography type="p">
+                        {iconography.content}
+                      </Typography>
+                      {iconography.expand.media?.map((image) => {
+                        return (
+                          <ProjectMedia key={image.id} mediaType={image.type} media={image} />
+                        )
+                      })}
+                    </div>
+                  })}
+                </div>
               </div>
-            </div>
-          </FadeIn>
-          <FadeIn>
-            <div className="flex flex-col gap-y-6">
-              <Typography type="h3">&gt; Font family</Typography>
-              <div>
-                <p
-                  className="text-[1.5rem] font-extralight">
-                  <ProjectMedia mediaType={project.expand.font_family.type} media={project.expand.font_family} />
-                </p>
+            </FadeIn>
+            <FadeIn>
+              <div className="flex flex-col gap-y-6 mt-12 justify-between h-full">
+                <Typography type="h3">&gt; Font family</Typography>
+                <div>
+                  <p
+                    className="text-[1.5rem] font-extralight">
+                    <ProjectMedia mediaType={project.expand.font_family.type} media={project.expand.font_family} />
+                  </p>
+                </div>
               </div>
-            </div>
-          </FadeIn>
+            </FadeIn>
+          </div>
           <FadeIn>
-            <div className="flex flex-col gap-y-6 w-full">
+            <div className="flex flex-col gap-y-6 mt-12 w-full">
               <Typography type="h2">&gt; High fidelity mock-ups</Typography>
               <div className="flex justify-center w-full items-center flex-wrap lg:gap-12">
                 <Swiper

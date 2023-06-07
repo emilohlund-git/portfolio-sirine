@@ -1,5 +1,6 @@
 import emailjs from '@emailjs/browser';
 import { FormEvent, useState } from 'react';
+import Spinner from './Spinner';
 
 interface ContactFormData {
   email: string;
@@ -7,6 +8,7 @@ interface ContactFormData {
 }
 
 const ContactForm = () => {
+  const [isSending, setIsSending] = useState(false);
   const [formData, setFormData] = useState<ContactFormData>({
     email: '',
     message: ''
@@ -14,6 +16,7 @@ const ContactForm = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setIsSending(true);
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
     try {
@@ -31,6 +34,7 @@ const ContactForm = () => {
     } catch (err) {
       console.error(err);
     }
+    setIsSending(false);
   }
 
   return (
@@ -51,7 +55,13 @@ const ContactForm = () => {
               message: e.target.value
             })
           }} className="no-scrollbar md:text-[1.5rem] bg-transparent border-[1px] rounded-2xl py-2 px-4 w-full" placeholder="Message" />
-          <button type="submit" className="md:text-[1.5rem] border-[1px] rounded-2xl py-2 px-4 w-full bg-[#EAEAEA] text-[#2E2E2E]">Send</button>
+          <button type="submit" className="md:text-[1.5rem] border-[1px] rounded-2xl py-2 px-4 w-full bg-[#EAEAEA] text-[#2E2E2E]">
+            {isSending ?
+              <Spinner full={false} />
+              :
+              'Send'
+            }
+          </button>
         </form>
       </div>
     </div>

@@ -26,7 +26,7 @@ const ProjectMedia: React.FC<Props> = ({ mediaType, media }) => {
     case 'video': {
       const url = pb.files.getUrl(media, media.media!);
       return (
-        <video src={url} autoPlay loop muted width="25%" height="25%" />
+        <video src={url} autoPlay loop muted width="100%" height="100%" />
       )
     }
     case 'embed': {
