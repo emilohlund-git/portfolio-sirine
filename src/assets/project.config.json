@@ -1,0 +1,81 @@
+[
+    {
+        "id": 1,
+        "title": "Boobs & Butts",
+        "slogan": "Hej på dig du",
+        "colors": {
+            "banner_color": "#F6FAFB"
+        },
+        "orientation": "left",
+        "cover_image": "/images/project_04.jpg",
+        "roles": [
+            "UX Designer",
+            "Interaction Designer",
+            "UI Designer",
+            "Visual Designer"
+        ],
+        "processes": [
+            "Research",
+            "Analyze",
+            "Ideate",
+            "Design",
+            "Test"
+        ],
+        "tools": [
+            "Figma",
+            "Miro",
+            "Photoshop",
+            "Illustrator",
+            "DaVinci Resolve",
+            "Canva"
+        ],
+        "problem": "Lorem ipsum",
+        "potential_solution": "",
+        "design": {
+            "brand_guidelines": {
+                "about": "Introducing our groundbreaking app designed to ensure the safety and well-being of LGBTQ+ individuals in the streets of Berlin. Our app aims to combat harassment by providing immediate access to help and support through partnerships with reputable organizations. In times of distress, victims can reach out to these contacts for assistance and guidance. Additionally, the app features a user-friendly map displaying two distinct pins: risky areas and safe areas. This intuitive visual aid empowers users to navigate the city confidently, avoiding potential dangers and seeking refuge in secure locations. Together, let's foster a safer environment and promote inclusivity for everyone in Berlin's LGBTQ+ community with our innovative app"
+            }
+        }
+    },
+    {
+        "id": 2,
+        "title": "So f***** gay",
+        "slogan": "Slutty slut slut",
+        "problem": "Lorem ipsum",
+        "colors": {
+            "banner_color": "#CD708D",
+            "slogan_color": "#F4B1C6",
+            "title_color": "#B04466",
+            "text_color": "white"
+        },
+        "orientation": "right",
+        "potential_solution": "",
+        "cover_image": "/images/product_03.png",
+        "roles": [
+            "Slut Designer",
+            "Interaction Slutigner",
+            "UI Slutter",
+            "Visual Slut"
+        ],
+        "processes": [
+            "Research",
+            "Analyze",
+            "Ideate",
+            "Design",
+            "Test"
+        ],
+        "tools": [
+            "Figma",
+            "Miro",
+            "Photoshop",
+            "Illustrator",
+            "DaVinci Resolve",
+            "Canva"
+        ],
+        "design": {
+            "brand_guidelines": {
+                "about": "You're a slutty slut dragon, you deserve to be slut-handled you stupid slut dragon slut. Go slut off with other sluts and slut yourself please."
+            }
+        }
+    }
+]
