@@ -43,7 +43,7 @@ const ProjectPage: React.FC<Props> = ({ project }) => {
           const maxOpacity = project.roles.length + 1;
           const opacity = (maxOpacity - index) / maxOpacity;
           return (
-            <FadeIn key={process + 2 + index} delay={index / 10}>
+            <FadeIn key={process + index} delay={index / 10}>
               <div style={{
                 backgroundColor: `rgba(167,213,225,${opacity})`
               }} className="p-10">
@@ -77,14 +77,14 @@ const ProjectPage: React.FC<Props> = ({ project }) => {
             </FadeIn>
             <FadeIn>
               <div>
-                {project?.expand.primary_research?.map((primary_research, index) => {
+                {project?.expand.primary_research?.map((primary_research) => {
                   return (
-                    <div key={index}>
+                    <div key={primary_research.id}>
                       <Typography type="p">
                         {primary_research.content}
                       </Typography>
                       <div className="flex flex-col h-screen gap-4">
-                        {primary_research.expand.media?.map((media, index) => {
+                        {primary_research.expand.media?.map((media) => {
                           console.log(project);
                           return (
                             <ProjectMedia key={media.id} mediaType={media.type} media={media} />
@@ -100,13 +100,13 @@ const ProjectPage: React.FC<Props> = ({ project }) => {
               <Typography type="h3">&gt; Secondary research</Typography>
             </FadeIn>
             <div className="flex flex-col gap-y-12">
-              {project.expand.secondary_research?.map((secondary_research, index) => {
+              {project.expand.secondary_research?.map((secondary_research) => {
                 return <FadeIn key={secondary_research.id}><div>
                   <Typography type="p">
                     {secondary_research.content}
                   </Typography>
                   <div className="flex flex-col h-screen gap-4">
-                    {secondary_research.expand.media?.map((media, index) => {
+                    {secondary_research.expand.media?.map((media) => {
                       return (
                         <ProjectMedia key={media.id} mediaType={media.type} media={media} />
                       )
@@ -131,7 +131,7 @@ const ProjectPage: React.FC<Props> = ({ project }) => {
           <div className="flex flex-col gap-y-6">
             <Typography type="h2">&gt; Findings / Data analysis</Typography>
             <div className="grid grid-cols-3 gap-4">
-              {project.expand.findings?.map((finding, index) => {
+              {project.expand.findings?.map((finding) => {
                 return (
                   <ProjectMedia key={finding.id} mediaType={finding.type} media={finding} />
                 )
@@ -209,7 +209,7 @@ const ProjectPage: React.FC<Props> = ({ project }) => {
             <div className="flex flex-col gap-y-6">
               <Typography type="h3">&gt; Logo</Typography>
               <div>
-                {project.expand.logo?.expand.media?.map((image, index) => {
+                {project.expand.logo?.expand.media?.map((image) => {
                   return (
                     <ProjectMedia key={image.id} mediaType={image.type} media={image} />
                   )
@@ -225,7 +225,7 @@ const ProjectPage: React.FC<Props> = ({ project }) => {
             <div className="flex flex-col gap-y-6">
               <Typography type="h3">&gt; Brand colors</Typography>
               <div>
-                {project.expand.brand_colors.expand.media?.map((image, index) => {
+                {project.expand.brand_colors.expand.media?.map((image) => {
                   return (
                     <ProjectMedia key={image.id} mediaType={image.type} media={image} />
                   )
@@ -240,12 +240,12 @@ const ProjectPage: React.FC<Props> = ({ project }) => {
             <div className="flex flex-col gap-y-6">
               <Typography type="h3">&gt; Iconography</Typography>
               <div>
-                {project.expand.iconography.map((iconography, index) => {
+                {project.expand.iconography.map((iconography) => {
                   return <div key={iconography.id}>
                     <p className="text-[1.5rem] font-extralight">
                       {iconography.content}
                     </p>
-                    {iconography.expand.media?.map((image, index) => {
+                    {iconography.expand.media?.map((image) => {
                       return (
                         <ProjectMedia key={image.id} mediaType={image.type} media={image} />
                       )
@@ -277,7 +277,7 @@ const ProjectPage: React.FC<Props> = ({ project }) => {
                   onSlideChange={() => console.log('slide change')}
                   onSwiper={(swiper) => console.log(swiper)}
                 >
-                  {project.expand.high_fidelity_mock_ups?.map((image, index) => {
+                  {project.expand.high_fidelity_mock_ups?.map((image) => {
                     return (
                       <SwiperSlide key={image.id}>
                         <Mockup media={image} />
