@@ -20,9 +20,12 @@ interface ProjectMediaContent extends DatabaseBase {
 }
 
 interface FirstPageContent extends DatabaseBase {
-  branding_text: string;
-  ui_ux_text: string;
-  product_design_text: string;
+  box_1_text: string;
+  box_1_title: string;
+  box_2_text: string;
+  box_2_title: string;
+  box_3_text: string;
+  box_3_title: string;
   contact_me_caption: string;
 }
 
@@ -48,6 +51,10 @@ interface ProjectType extends DatabaseBase {
       created: string;
       updated: string;
       id: string;
+      process_steps_color: string;
+      role_list_color: string;
+      process_list_color: string;
+      tools_list_color: string;
       banner_color: string;
       slogan_color: string;
       text_color: string;

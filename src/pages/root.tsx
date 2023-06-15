@@ -36,13 +36,13 @@ const Root = () => {
       </div>
       <Grid>
         <Box size={'small'} className="bg-[#F3E3CE]">
-          <Skill icon={<BrandingIcon className="w-12 h-12 fill-[#DBC49F]" />} title="Branding" description={content?.branding_text} />
+          <Skill icon={<BrandingIcon className="w-12 h-12 fill-[#DBC49F]" />} title={content?.box_1_title} description={content?.box_1_text} />
         </Box>
         <Box size={'small'} className="bg-[#F7ECDE]">
-          <Skill icon={<ProductDesignIcon className="w-12 h-12 fill-[#DBC49F]" />} title="UI/UX" description={content?.ui_ux_text} />
+          <Skill icon={<ProductDesignIcon className="w-12 h-12 fill-[#DBC49F]" />} title={content?.box_2_title} description={content?.box_2_text} />
         </Box>
         <Box size={'small'} className="bg-[#FBF6EF]">
-          <Skill icon={<UiUxIcon className="w-12 h-12 fill-[#DBC49F]" />} title="Product Design" description={content?.product_design_text} />
+          <Skill icon={<UiUxIcon className="w-12 h-12 fill-[#DBC49F]" />} title={content?.box_3_title} description={content?.box_3_text} />
         </Box>
       </Grid>
       {projects?.map((project: ProjectType, index: number) => {

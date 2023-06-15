@@ -9,6 +9,7 @@ import Mockup from "../components/Mockup";
 import Project from "../components/Project";
 import ProjectMedia from "../components/ProjectMedia";
 import Typography from "../components/Typography";
+import { hexToRgbA } from "../utils/utils";
 
 const ProjectPage = () => {
   const project = useLoaderData() as ProjectType;
@@ -16,9 +17,9 @@ const ProjectPage = () => {
   return (
     <Layout>
       <Project flat={true} project={project} />
-      <FadeList title="Role" list={project.roles} titleBackground="#E9E3DC" fadingBackground="238,233,227" />
-      <FadeList title="Process" list={project.processes} titleBackground="#DEC7BE" fadingBackground="230,210,201" />
-      <FadeList title="Tools" list={project.tools} titleBackground="#C0D6E6" fadingBackground="206,224,237" />
+      <FadeList title="Role" list={project.roles} titleBackground={project.expand.colors.role_list_color} fadingBackground={hexToRgbA(project.expand.colors.role_list_color)} />
+      <FadeList title="Process" list={project.processes} titleBackground={project.expand.colors.process_list_color} fadingBackground={hexToRgbA(project.expand.colors.process_list_color)} />
+      <FadeList title="Tools" list={project.tools} titleBackground={project.expand.colors.tools_list_color} fadingBackground={hexToRgbA(project.expand.colors.tools_list_color)} />
       <div className="flex flex-col lg:px-80 pb-[10rem] pt-[3rem] lg:pt-[12rem] gap-y-20 text-center lg:text-left px-4">
         <FadeIn>
           <div className="flex flex-col gap-y-6">
@@ -43,7 +44,7 @@ const ProjectPage = () => {
           return (
             <FadeIn key={process + index} delay={index / 10}>
               <div style={{
-                backgroundColor: `rgba(167,213,225,${opacity})`
+                backgroundColor: `rgba(${hexToRgbA(project.expand.colors.process_steps_color)},${opacity})`
               }} className="p-10">
                 <span className="text-[4rem] font-bold opacity-10">0{index + 1}.</span>
                 <p className="text-[2em] font-extralight opacity-50">{process}</p>
