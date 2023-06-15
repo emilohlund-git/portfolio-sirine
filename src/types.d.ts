@@ -19,6 +19,13 @@ interface ProjectMediaContent extends DatabaseBase {
   }
 }
 
+interface FirstPageContent extends DatabaseBase {
+  branding_text: string;
+  ui_ux_text: string;
+  product_design_text: string;
+  contact_me_caption: string;
+}
+
 interface ProjectType extends DatabaseBase {
   about: string;
   cover_image: string;

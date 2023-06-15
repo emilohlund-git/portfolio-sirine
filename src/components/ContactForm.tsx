@@ -7,7 +7,11 @@ interface ContactFormData {
   message: string;
 }
 
-const ContactForm = () => {
+type Props = {
+  caption?: string;
+}
+
+const ContactForm: React.FC<Props> = ({ caption }) => {
   const [isSending, setIsSending] = useState(false);
   const [formData, setFormData] = useState<ContactFormData>({
     email: '',
@@ -41,7 +45,7 @@ const ContactForm = () => {
     <div id="contact" className="p-20 py-52 min-h-screen md:h-screen flex flex-col justify-center items-center bg-[#2F2F2F] text-[#DDDDDD]">
       <div className="text-center md:w-1/3">
         <h2 className="text-[2rem] md:text-[4rem] font-extralight">Contact me</h2>
-        <p className="font-extralight md:text-[1.5rem]">Tell me what the fuck is going on please.</p>
+        <p className="font-extralight md:text-[1.5rem]">{caption}</p>
         <form onSubmit={handleSubmit} className="mt-10 flex flex-col gap-y-8 font-extralight">
           <input value={formData.email} onChange={(e) => {
             setFormData({

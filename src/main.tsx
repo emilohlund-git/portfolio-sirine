@@ -13,6 +13,9 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    loader: async () => {
+      return await pb.collection('front_page_content').getFirstListItem('');
+    },
     errorElement: <div></div>,
   },
   {

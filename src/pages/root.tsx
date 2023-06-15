@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import Box from "../components/Box";
 import ContactForm from "../components/ContactForm";
 import Grid from "../components/Grid";
@@ -11,6 +12,7 @@ import UiUxIcon from "../icons/UiUxIcon";
 import pb from "../pb.config";
 
 const Root = () => {
+  const content = useLoaderData() as FirstPageContent;
   const [projects, setProjects] = useState<ProjectType[]>([]);
 
   useEffect(() => {
@@ -34,19 +36,19 @@ const Root = () => {
       </div>
       <Grid>
         <Box size={'small'} className="bg-[#F3E3CE]">
-          <Skill icon={<BrandingIcon className="w-12 h-12 fill-[#DBC49F]" />} title="Branding" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do." />
+          <Skill icon={<BrandingIcon className="w-12 h-12 fill-[#DBC49F]" />} title="Branding" description={content?.branding_text} />
         </Box>
         <Box size={'small'} className="bg-[#F7ECDE]">
-          <Skill icon={<ProductDesignIcon className="w-12 h-12 fill-[#DBC49F]" />} title="UI/UX" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do." />
+          <Skill icon={<ProductDesignIcon className="w-12 h-12 fill-[#DBC49F]" />} title="UI/UX" description={content?.ui_ux_text} />
         </Box>
         <Box size={'small'} className="bg-[#FBF6EF]">
-          <Skill icon={<UiUxIcon className="w-12 h-12 fill-[#DBC49F]" />} title="Product Design" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do." />
+          <Skill icon={<UiUxIcon className="w-12 h-12 fill-[#DBC49F]" />} title="Product Design" description={content?.product_design_text} />
         </Box>
       </Grid>
       {projects?.map((project: ProjectType, index: number) => {
         return <Project key={index} project={project} />
       })}
-      <ContactForm />
+      <ContactForm caption={content?.contact_me_caption} />
     </Layout>
   )
 }

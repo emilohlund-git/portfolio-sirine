@@ -35,9 +35,9 @@ const Project: React.FC<Props> = ({ project, flat = false }) => {
             <Typography style={{
               color: project.expand.colors.text_color
             }} type="p" className="text-center text-base" html={truncate()} />
-            <Typography type="a" style={{
+            <span style={{
               color: project.expand.colors.title_color
-            }} className={`font-semibold`}><Link to={`/projects/${project.id}`}>&gt; Read more</Link></Typography>
+            }} className={`font-semibold`}><Link to={`/projects/${project.id}`}>&gt; Read more</Link></span>
             <div className="flex gap-2 flex-wrap mt-4 justify-center">
               {project.roles.map((role, index) => {
                 return <div key={role + index} className="w-fit p-2 text-xs text-white bg-black rounded-xl">{role}</div>
