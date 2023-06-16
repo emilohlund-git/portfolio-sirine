@@ -10,12 +10,12 @@ const FadeIn: React.FC<Props> = ({ children, delay = 0 }) => {
   return (
     <motion.div
       initial={{
-        y: 100,
+        y: -10,
         opacity: 0
       }}
       whileInView={{
         y: 0,
-        opacity: 1
+        opacity: 1,
       }}
       transition={{
         duration: .7,

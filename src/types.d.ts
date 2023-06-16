@@ -21,10 +21,13 @@ interface ProjectMediaContent extends DatabaseBase {
 
 interface FirstPageContent extends DatabaseBase {
   box_1_text: string;
+  box_1_icon: string;
   box_1_title: string;
   box_2_text: string;
+  box_2_icon: string;
   box_2_title: string;
   box_3_text: string;
+  box_3_icon: string;
   box_3_title: string;
   contact_me_caption: string;
 }

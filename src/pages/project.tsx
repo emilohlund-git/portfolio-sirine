@@ -62,17 +62,17 @@ const ProjectPage = () => {
         <hr />
         <FadeIn>
           <div className="flex flex-col gap-y-6">
-            <Typography type="h2">&gt; Goals</Typography>
+            <Typography type="h2">Goals</Typography>
             <Typography type="p" html={project.research_goals} />
           </div>
         </FadeIn>
         <div className="flex flex-col gap-y-6">
           <FadeIn>
-            <Typography type="h2">&gt; Methodologies</Typography>
+            <Typography type="h2">Methodologies</Typography>
           </FadeIn>
           <div className="flex flex-col gap-y-6">
             <FadeIn>
-              <Typography type="h3">&gt; Primary research</Typography>
+              <Typography type="h3">Primary research</Typography>
             </FadeIn>
             <FadeIn>
               <div>
@@ -96,7 +96,7 @@ const ProjectPage = () => {
               </div>
             </FadeIn>
             <FadeIn>
-              <Typography type="h3">&gt; Secondary research</Typography>
+              <Typography type="h3">Secondary research</Typography>
             </FadeIn>
             <div className="flex flex-col gap-y-12">
               {project.expand.secondary_research?.map((secondary_research) => {
@@ -128,7 +128,7 @@ const ProjectPage = () => {
         <hr />
         <FadeIn>
           <div className="flex flex-col gap-y-6">
-            <Typography type="h2">&gt; Findings / Data analysis</Typography>
+            <Typography type="h2">Findings / Data analysis</Typography>
             <div className="grid grid-cols-3 gap-4">
               {project.expand.findings?.map((finding) => {
                 return (
@@ -140,13 +140,13 @@ const ProjectPage = () => {
         </FadeIn>
         <FadeIn>
           <div className="flex flex-col gap-y-6">
-            <Typography type="h2">&gt; Key insights</Typography>
+            <Typography type="h2">Key insights</Typography>
             <Typography type="p" html={project.key_insights} />
           </div>
         </FadeIn>
         <FadeIn>
           <div className="flex flex-col gap-y-6">
-            <Typography type="h2">&gt; Persona</Typography>
+            <Typography type="h2">Persona</Typography>
             <ProjectMedia mediaType={project.expand.persona?.type} media={project.expand.persona} />
           </div>
         </FadeIn>
@@ -161,25 +161,25 @@ const ProjectPage = () => {
         <hr />
         <FadeIn>
           <div className="flex flex-col gap-y-6">
-            <Typography type="h2">&gt; Affinity map</Typography>
+            <Typography type="h2">Affinity map</Typography>
             <ProjectMedia mediaType={project.expand.affinity_map?.type} media={project.expand.affinity_map} />
           </div>
         </FadeIn>
         <FadeIn>
           <div className="flex flex-col gap-y-6">
-            <Typography type="h2">&gt; User scenario / Storyboard</Typography>
+            <Typography type="h2">User scenario / Storyboard</Typography>
             <ProjectMedia mediaType={project.expand.user_scenario?.type} media={project.expand.user_scenario} />
           </div>
         </FadeIn>
         <FadeIn>
           <div className="flex flex-col gap-y-6">
-            <Typography type="h2">&gt; User flow</Typography>
+            <Typography type="h2">User flow</Typography>
             <ProjectMedia mediaType={project.expand.user_flow?.type} media={project.expand.user_flow} />
           </div>
         </FadeIn>
         <FadeIn>
           <div className="flex flex-col gap-y-6">
-            <Typography type="h2">&gt; App navigation map</Typography>
+            <Typography type="h2">App navigation map</Typography>
             <ProjectMedia mediaType={project.expand.navigation_map?.type} media={project.expand.navigation_map} />
           </div>
         </FadeIn>
@@ -194,11 +194,11 @@ const ProjectPage = () => {
         <hr />
         <div className="flex flex-col gap-y-6">
           <FadeIn>
-            <Typography type="h2">&gt; Brand guidelines</Typography>
+            <Typography type="h2">Brand guidelines</Typography>
           </FadeIn>
           <FadeIn>
             <div className="flex flex-col gap-y-6 mt-12">
-              <Typography type="h3">&gt; About</Typography>
+              <Typography type="h3">About</Typography>
               <div>
                 <Typography type="p" html={project.about} />
               </div>
@@ -206,7 +206,7 @@ const ProjectPage = () => {
           </FadeIn>
           <FadeIn>
             <div className="flex flex-col gap-y-6 mt-12">
-              <Typography type="h3">&gt; Logo</Typography>
+              <Typography type="h3">Logo</Typography>
               <div className="grid col-auto grid-flow-col gap-8">
                 {project.expand.logo?.expand.media?.map((image) => {
                   return (
@@ -224,7 +224,7 @@ const ProjectPage = () => {
           </FadeIn>
           <FadeIn>
             <div className="flex flex-col gap-y-6 mt-12">
-              <Typography type="h3">&gt; Brand colors</Typography>
+              <Typography type="h3">Brand colors</Typography>
               <div className="flex gap-x-8">
                 {project.expand.brand_colors.expand.media?.map((image) => {
                   return (
@@ -240,7 +240,7 @@ const ProjectPage = () => {
           <div className="flex gap-x-20">
             <FadeIn>
               <div className="flex flex-col gap-y-6 mt-12">
-                <Typography type="h3">&gt; Iconography</Typography>
+                <Typography type="h3">Iconography</Typography>
                 <div>
                   {project.expand.iconography.map((iconography) => {
                     return <div className="flex flex-col gap-y-12" key={iconography.id}>
@@ -259,7 +259,7 @@ const ProjectPage = () => {
             </FadeIn>
             <FadeIn>
               <div className="flex flex-col gap-y-6 mt-12 justify-between h-full">
-                <Typography type="h3">&gt; Font family</Typography>
+                <Typography type="h3">Font family</Typography>
                 <div>
                   <p
                     className="text-[1.5rem] font-extralight">
@@ -271,7 +271,7 @@ const ProjectPage = () => {
           </div>
           <FadeIn>
             <div className="flex flex-col gap-y-6 mt-12 w-full">
-              <Typography type="h2">&gt; High fidelity mock-ups</Typography>
+              <Typography type="h2">High fidelity mock-ups</Typography>
               <div className="flex justify-center w-full items-center flex-wrap lg:gap-12">
                 <Swiper
                   spaceBetween={50}
@@ -293,7 +293,7 @@ const ProjectPage = () => {
           </FadeIn>
           <FadeIn>
             <div className="flex flex-col gap-y-6">
-              <Typography type="h2">&gt; Interactive prototype</Typography>
+              <Typography type="h2">Interactive prototype</Typography>
               <div className="flex items-center justify-center">
                 <FigmaPrototype url={project.expand.interactive_prototype.embed_src} />
               </div>
