@@ -1,11 +1,15 @@
 import { useLoaderData } from "react-router-dom";
+import { A11y, Navigation, Pagination } from 'swiper';
 import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import FadeIn from "../components/FadeIn";
 import FadeList from "../components/FadeList";
 import FigmaPrototype from "../components/FigmaPrototype";
 import Layout from "../components/Layout";
 import Mockup from "../components/Mockup";
+import ProcessStepsBanner from "../components/ProcessStepsBanner";
 import Project from "../components/Project";
 import ProjectMedia from "../components/ProjectMedia";
 import Typography from "../components/Typography";
@@ -20,7 +24,7 @@ const ProjectPage = () => {
       <FadeList title="Role" list={project.roles} titleBackground={project.expand.colors.role_list_color} fadingBackground={hexToRgbA(project.expand.colors.role_list_color)} />
       <FadeList title="Process" list={project.processes} titleBackground={project.expand.colors.process_list_color} fadingBackground={hexToRgbA(project.expand.colors.process_list_color)} />
       <FadeList title="Tools" list={project.tools} titleBackground={project.expand.colors.tools_list_color} fadingBackground={hexToRgbA(project.expand.colors.tools_list_color)} />
-      <div className="flex flex-col lg:px-80 pb-[10rem] pt-[3rem] lg:pt-[12rem] gap-y-20 text-center lg:text-left px-4">
+      <div className="flex flex-col lg:px-96 pb-[10rem] pt-[3rem] lg:pt-[12rem] gap-y-20 text-center lg:text-left px-4">
         <FadeIn>
           <div className="flex flex-col gap-y-6">
             <Typography type="h1" className="flex flex-col">Problem</Typography>
@@ -36,30 +40,10 @@ const ProjectPage = () => {
           </div>
         </FadeIn>
       </div>
-      <div
-        className={`grid lg:grid-flow-col`}>
-        {project.processes.map((process, index) => {
-          const maxOpacity = project.roles.length + 1;
-          const opacity = (maxOpacity - index) / maxOpacity;
-          return (
-            <FadeIn key={process + index} delay={index / 10}>
-              <div style={{
-                backgroundColor: `rgba(${hexToRgbA(project.expand.colors.process_steps_color)},${opacity})`
-              }} className="p-10">
-                <span className="text-[4rem] font-bold opacity-10">0{index + 1}.</span>
-                <p className="text-[2em] font-extralight opacity-50">{process}</p>
-              </div>
-            </FadeIn>
-          )
-        })}
-      </div>
-      <div className="flex flex-col lg:px-80 pt-[12rem] gap-y-20">
-        <FadeIn>
-          <Typography type="h1" className="flex flex-col">
-            <span className="text-[4rem] font-extralight opacity-10">01.</span>
-            Research</Typography>
-        </FadeIn>
-        <hr />
+      <ProcessStepsBanner project={project} />
+      <div style={{
+        backgroundColor: `rgba(${hexToRgbA(project.expand.colors.process_steps_color)},${1})`
+      }} className="flex flex-col lg:px-96 pt-[12rem] gap-y-20">
         <FadeIn>
           <div className="flex flex-col gap-y-6">
             <Typography type="h2">Goals</Typography>
@@ -82,7 +66,7 @@ const ProjectPage = () => {
                       <Typography type="p">
                         {primary_research.content}
                       </Typography>
-                      <div className="flex flex-col h-screen gap-4">
+                      <div className="flex h-screen gap-4">
                         {primary_research.expand.media?.map((media) => {
                           console.log(project);
                           return (
@@ -104,7 +88,7 @@ const ProjectPage = () => {
                   <Typography type="p">
                     {secondary_research.content}
                   </Typography>
-                  <div className="flex flex-col h-screen gap-4">
+                  <div className="flex h-screen gap-4">
                     {secondary_research.expand.media?.map((media) => {
                       return (
                         <ProjectMedia key={media.id} mediaType={media.type} media={media} />
@@ -117,15 +101,11 @@ const ProjectPage = () => {
             </div>
           </div>
         </div>
-        <hr />
       </div >
-      <div className="flex flex-col lg:px-80 pt-[12em] gap-y-20">
-        <FadeIn>
-          <Typography type="h1" className="flex flex-col">
-            <span className="text-[4rem] font-extralight opacity-10">02.</span>
-            Analyze / Empathize</Typography>
-        </FadeIn>
-        <hr />
+      <ProcessStepsBanner project={project} />
+      <div style={{
+        backgroundColor: `rgba(${hexToRgbA(project.expand.colors.process_steps_color)},${.8})`
+      }} className="flex flex-col lg:px-96 pt-[12em] gap-y-20">
         <FadeIn>
           <div className="flex flex-col gap-y-6">
             <Typography type="h2">Findings / Data analysis</Typography>
@@ -150,15 +130,11 @@ const ProjectPage = () => {
             <ProjectMedia mediaType={project.expand.persona?.type} media={project.expand.persona} />
           </div>
         </FadeIn>
-        <hr />
       </div>
-      <div className="flex flex-col lg:px-80 pt-[12em] gap-y-20">
-        <FadeIn>
-          <Typography type="h1" className="flex flex-col">
-            <span className="text-[4rem] font-extralight opacity-10">03.</span>
-            Ideate</Typography>
-        </FadeIn>
-        <hr />
+      <ProcessStepsBanner project={project} />
+      <div style={{
+        backgroundColor: `rgba(${hexToRgbA(project.expand.colors.process_steps_color)},${.6})`
+      }} className="flex flex-col lg:px-96 pt-[12em] gap-y-20">
         <FadeIn>
           <div className="flex flex-col gap-y-6">
             <Typography type="h2">Affinity map</Typography>
@@ -183,15 +159,11 @@ const ProjectPage = () => {
             <ProjectMedia mediaType={project.expand.navigation_map?.type} media={project.expand.navigation_map} />
           </div>
         </FadeIn>
-        <hr />
       </div>
-      <div className="flex flex-col lg:px-80 pt-[12em] gap-y-20">
-        <FadeIn>
-          <Typography type="h1" className="flex flex-col">
-            <span className="text-[4rem] font-extralight opacity-10">04.</span>
-            Design</Typography>
-        </FadeIn>
-        <hr />
+      <ProcessStepsBanner project={project} />
+      <div style={{
+        backgroundColor: `rgba(${hexToRgbA(project.expand.colors.process_steps_color)},${.4})`
+      }} className="flex flex-col lg:px-96 pt-[12em] gap-y-20">
         <div className="flex flex-col gap-y-6">
           <FadeIn>
             <Typography type="h2">Brand guidelines</Typography>
@@ -272,13 +244,14 @@ const ProjectPage = () => {
           <FadeIn>
             <div className="flex flex-col gap-y-6 mt-12 w-full">
               <Typography type="h2">High fidelity mock-ups</Typography>
-              <div className="flex justify-center w-full items-center flex-wrap lg:gap-12">
+              <div className="">
                 <Swiper
-                  spaceBetween={50}
-                  slidesPerView={3}
+                  modules={[Navigation, Pagination, A11y]}
+                  spaceBetween={0}
+                  navigation
                   pagination={{ clickable: true }}
-                  onSlideChange={() => console.log('slide change')}
-                  onSwiper={(swiper) => console.log(swiper)}
+                  scrollbar={{ draggable: true }}
+                  slidesPerView={3}
                 >
                   {project.expand.high_fidelity_mock_ups?.map((image) => {
                     return (

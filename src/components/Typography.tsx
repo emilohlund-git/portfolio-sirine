@@ -31,10 +31,10 @@ const Typography: React.FC<Props> = ({ type, className, children, html, style })
       }} className={`text-[3em] font-bold ${className}`}>{children}</h1>;
       case 'h2': return <h2 style={{
         ...style
-      }} className={`text-[2.0em] font-semibold ${className}`}>{children}</h2>;
+      }} className={`text-[1.4em] text-gray-400 font-light uppercase ${className}`}>{children}</h2>;
       case 'h3': return <h3 style={{
         ...style
-      }} className={`text-[1.7em] font-normal ${className}`}>{children}</h3>;
+      }} className={`text-[1.2em] text-gray-400 font-normal uppercase ${className}`}>&gt; {children}</h3>;
       case 'h4': return <h4 style={{
         ...style
       }} className={`${className}`}>{children}</h4>;

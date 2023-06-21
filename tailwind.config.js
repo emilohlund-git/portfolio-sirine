@@ -7,6 +7,7 @@ export default {
     extend: {},
   },
   plugins: [
+    require("@tailwindcss/typography"),
     plugin(function ({ addUtilities }) {
       addUtilities({
         ".no-scrollbar": {

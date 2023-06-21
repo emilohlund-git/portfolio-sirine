@@ -12,13 +12,13 @@ const ProjectMedia: React.FC<Props> = ({ mediaType, media }) => {
     case 'image': {
       const url = pb.files.getUrl(media, media.media!, { thumb: '100x150' })
       return (
-        <img src={url} width="100%" height="100%" />
+        <img className="z-10" src={url} width="100%" height="100%" />
       );
     }
     case 'pdf': {
       const url = pb.files.getUrl(media, media.media!);
       return (
-        <object data={url} type="application/pdf" width="100%" height="100%">
+        <object data={`${url}?#zoom=75%scrollbar=0%toolbar=0&navpanes=0`} type="application/pdf" width="100%" height="100%">
           <p>Alternative text - include a link <a href={url}>to the PDF!</a></p>
         </object>
       );

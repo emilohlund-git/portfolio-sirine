@@ -77,3 +77,5 @@ interface ProjectType extends DatabaseBase {
     user_scenario: ProjectMedia;
   }
 }
+
+declare module "swiper";
