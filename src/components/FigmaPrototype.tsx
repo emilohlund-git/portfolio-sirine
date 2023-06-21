@@ -9,7 +9,7 @@ const FigmaPrototype: React.FC<Props> = ({ url }) => {
   const [loading, setLoading] = useState(true);
 
   return (
-    <div className="relative w-full py-20">
+    <div className="relative w-full mt-36">
       <iframe onLoad={() => setLoading(false)} style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }}
         className="h-[100vh] w-full" src={url + '&hide-ui=1'} allowFullScreen />
       {loading ?

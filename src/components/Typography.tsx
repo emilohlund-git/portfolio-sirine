@@ -18,7 +18,7 @@ const Typography: React.FC<Props> = ({ type, className, children, html, style })
         if (html) {
           return <p style={{
             ...style
-          }} dangerouslySetInnerHTML={{ __html: html }} className={`text-[1.5rem] text-left lg:text-[1.5rem] font-extralight ${className}`} />;
+          }} dangerouslySetInnerHTML={{ __html: html }} className={`text-[1.5rem] text-left lg:text-[1.4rem] font-extralight ${className}`} />;
         } else {
           return <p
             className={`text-[1.5rem] text-left lg:text-[1.5rem] font-extralight ${className}`}>

@@ -18,9 +18,11 @@ const ProjectMedia: React.FC<Props> = ({ mediaType, media }) => {
     case 'pdf': {
       const url = pb.files.getUrl(media, media.media!);
       return (
-        <object data={`${url}?#zoom=75%scrollbar=0%toolbar=0&navpanes=0`} type="application/pdf" width="100%" height="100%">
-          <p>Alternative text - include a link <a href={url}>to the PDF!</a></p>
-        </object>
+        <div className="h-full w-full">
+          <object data={`${url}?#zoom=75%scrollbar=0%toolbar=0&navpanes=0&view=Fit&statusbar=0`} type="application/pdf" width="100%" height="100%">
+            <p>Click to open <a href={url}>the PDF!</a></p>
+          </object>
+        </div>
       );
     }
     case 'video': {

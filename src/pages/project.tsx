@@ -27,15 +27,13 @@ const ProjectPage = () => {
       <div className="flex flex-col lg:px-96 pb-[10rem] pt-[3rem] lg:pt-[12rem] gap-y-20 text-center lg:text-left px-4">
         <FadeIn>
           <div className="flex flex-col gap-y-6">
-            <Typography type="h1" className="flex flex-col">Problem</Typography>
-            <hr />
+            <Typography type="h2" className="flex flex-col">Problem</Typography>
             <Typography type="p" html={project.problem} />
           </div>
         </FadeIn>
         <FadeIn>
           <div className="flex flex-col gap-y-6">
-            <Typography type="h1" className="flex flex-col">Potential solution</Typography>
-            <hr />
+            <Typography type="h2" className="flex flex-col">Potential solution</Typography>
             <Typography type="p" html={project.potential_solution} />
           </div>
         </FadeIn>
@@ -43,7 +41,7 @@ const ProjectPage = () => {
       <ProcessStepsBanner project={project} />
       <div style={{
         backgroundColor: `rgba(${hexToRgbA(project.expand.colors.process_steps_color)},${1})`
-      }} className="flex flex-col lg:px-96 pt-[12rem] gap-y-20">
+      }} className="flex flex-col lg:px-96 pt-[12rem] gap-y-20 pb-36">
         <FadeIn>
           <div className="flex flex-col gap-y-6">
             <Typography type="h2">Goals</Typography>
@@ -105,7 +103,7 @@ const ProjectPage = () => {
       <ProcessStepsBanner project={project} />
       <div style={{
         backgroundColor: `rgba(${hexToRgbA(project.expand.colors.process_steps_color)},${.8})`
-      }} className="flex flex-col lg:px-96 pt-[12em] gap-y-20">
+      }} className="flex flex-col lg:px-96 pt-[12em] gap-y-20 pb-36">
         <FadeIn>
           <div className="flex flex-col gap-y-6">
             <Typography type="h2">Findings / Data analysis</Typography>
@@ -134,7 +132,7 @@ const ProjectPage = () => {
       <ProcessStepsBanner project={project} />
       <div style={{
         backgroundColor: `rgba(${hexToRgbA(project.expand.colors.process_steps_color)},${.6})`
-      }} className="flex flex-col lg:px-96 pt-[12em] gap-y-20">
+      }} className="flex flex-col lg:px-96 pt-[12em] gap-y-20 pb-36">
         <FadeIn>
           <div className="flex flex-col gap-y-6">
             <Typography type="h2">Affinity map</Typography>
@@ -163,7 +161,7 @@ const ProjectPage = () => {
       <ProcessStepsBanner project={project} />
       <div style={{
         backgroundColor: `rgba(${hexToRgbA(project.expand.colors.process_steps_color)},${.4})`
-      }} className="flex flex-col lg:px-96 pt-[12em] gap-y-20">
+      }} className="flex flex-col lg:px-96 pt-[12em] gap-y-20 pb-36">
         <div className="flex flex-col gap-y-6">
           <FadeIn>
             <Typography type="h2">Brand guidelines</Typography>
@@ -230,7 +228,7 @@ const ProjectPage = () => {
               </div>
             </FadeIn>
             <FadeIn>
-              <div className="flex flex-col gap-y-6 mt-12 justify-between h-full">
+              <div className="flex flex-col gap-y-6 mt-12 justify-between h-full pb-36">
                 <Typography type="h3">Font family</Typography>
                 <div>
                   <p
@@ -241,39 +239,42 @@ const ProjectPage = () => {
               </div>
             </FadeIn>
           </div>
-          <FadeIn>
-            <div className="flex flex-col gap-y-6 mt-12 w-full">
-              <Typography type="h2">High fidelity mock-ups</Typography>
-              <div className="">
-                <Swiper
-                  modules={[Navigation, Pagination, A11y]}
-                  spaceBetween={0}
-                  navigation
-                  pagination={{ clickable: true }}
-                  scrollbar={{ draggable: true }}
-                  slidesPerView={3}
-                >
-                  {project.expand.high_fidelity_mock_ups?.map((image) => {
-                    return (
-                      <SwiperSlide key={image.id}>
-                        <Mockup media={image} />
-                      </SwiperSlide>
-                    )
-                  })}
-                </Swiper>
-              </div>
-            </div>
-          </FadeIn>
-          <FadeIn>
-            <div className="flex flex-col gap-y-6">
-              <Typography type="h2">Interactive prototype</Typography>
-              <div className="flex items-center justify-center">
-                <FigmaPrototype url={project.expand.interactive_prototype.embed_src} />
-              </div>
-            </div>
-          </FadeIn>
         </div>
       </div >
+      <ProcessStepsBanner project={project} />
+      <FadeIn>
+        <div style={{
+          backgroundColor: `rgba(${hexToRgbA(project.expand.colors.process_steps_color)},${.2})`
+        }} className="flex flex-col pb-36 w-full">
+          <Typography type="h2" className="text-center mt-36">High fidelity mock-ups</Typography>
+          <div className="">
+            <Swiper
+              modules={[Navigation, Pagination, A11y]}
+              spaceBetween={0}
+              navigation
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+              slidesPerView={5}
+            >
+              {project.expand.high_fidelity_mock_ups?.map((image) => {
+                return (
+                  <SwiperSlide key={image.id}>
+                    <Mockup media={image} />
+                  </SwiperSlide>
+                )
+              })}
+            </Swiper>
+          </div>
+        </div>
+      </FadeIn>
+      <FadeIn>
+        <div className="flex flex-col bg-black">
+          <Typography type="h2" className="text-center mt-36">Interactive prototype</Typography>
+          <div className="flex items-center justify-center">
+            <FigmaPrototype url={project.expand.interactive_prototype.embed_src} />
+          </div>
+        </div>
+      </FadeIn>
     </Layout >
   )
 }
